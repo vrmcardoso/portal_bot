@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  side: MyString
+  entry_price: 9.99
+  exit_price: 9.99
+  trading_pair: MyString
+  entry_date: 2024-06-05 16:00:28
+  exit_date: 2024-06-05 16:00:28
+  quantity: 9.99
+  profit_loss: 9.99
+  fees: 9.99
+  trade_duration: 1
+
+two:
+  side: MyString
+  entry_price: 9.99
+  exit_price: 9.99
+  trading_pair: MyString
+  entry_date: 2024-06-05 16:00:28
+  exit_date: 2024-06-05 16:00:28
+  quantity: 9.99
+  profit_loss: 9.99
+  fees: 9.99
+  trade_duration: 1
