@@ -4,7 +4,6 @@ class CreateBacktestTrades < ActiveRecord::Migration[7.1]
       t.string :side
       t.decimal :entry_price
       t.decimal :exit_price
-      t.references :trading_pair, null: false, foreign_key: true
       t.datetime :entry_date
       t.datetime :exit_date
       t.decimal :quantity

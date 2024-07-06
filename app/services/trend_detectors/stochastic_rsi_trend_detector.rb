@@ -1,4 +1,4 @@
-class StochasticRsiTrendDetector
+class StochasticRsiTrendDetector < BaseTrendDetector
   def initialize(daily_data, weekly_data)
     @daily_data = daily_data
     @weekly_data = weekly_data

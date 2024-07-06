@@ -1,0 +1,30 @@
+<!-- app/views/backtests/index.html.erb -->
+<h1>Backtests</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Strategy</th>
+      <th>Parameters</th>
+      <th>Start Time</th>
+      <th>End Time</th>
+      <th>Profit/Loss</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @backtests.each do |backtest| %>
+      <tr>
+        <td><%= backtest.strategy_name %></td>
+        <td><%= backtest.parameters %></td>
+        <td><%= backtest.start_time %></td>
+        <td><%= backtest.end_time %></td>
+        <td><%= backtest.profit_loss %></td>
+        <td><%= link_to 'Show', backtest_path(backtest) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New Backtest', new_backtest_path %>

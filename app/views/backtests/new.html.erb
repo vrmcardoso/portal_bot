@@ -1,0 +1,22 @@
+<h1>Run a New Backtest</h1>
+
+<%= form_with(model: @backtest, url: backtests_path, local: true) do |form| %>
+  <div class="field">
+    <%= form.label :trading_pair_id, "Trading Pair" %>
+    <%= form.collection_select :trading_pair_id, TradingPair.all, :id, :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :from %>
+    <%= form.date_select :from %>
+  </div>
+
+  <div class="field">
+    <%= form.label :to %>
+    <%= form.date_select :to %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Run Backtest" %>
+  </div>
+<% end %>

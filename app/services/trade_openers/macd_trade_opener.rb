@@ -1,4 +1,4 @@
-class MacdTradeOpener < BaseTradeOpener
+class MacdTradeOpener
   def entry_condition_met?(previous_candle, current_candle, trend)
     rule = @strategy_config['entry_rules'][trend.to_s]
 

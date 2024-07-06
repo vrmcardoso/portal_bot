@@ -2,8 +2,8 @@ class StrategyRunner
   def initialize(strategy_name, data)
     @strategy_config = load_strategy_config(strategy_name)
     @data = data
-    @trend_detector = initialize_component(@strategy_config['trend_detector'], data)
-    @trade_opener = initialize_component(@strategy_config['trade_opener'], @strategy_config)
+    @trend_detector = initialize_component(@strategy_config['trend_detector'], data['1d_stochastic_rsi'], data['1w_stochastic_rsi'])
+    @trade_opener = initialize_component(@strategy_config['trade_opener'])
     @trade_closer_config = @strategy_config['trade_closer']
     @open_trades = []
     @closed_trades = []

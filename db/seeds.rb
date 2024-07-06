@@ -7,3 +7,11 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+# db/seeds.rb
+TradingPair.create([
+  { name: 'BTCUSD', symbol: 'BTCUSD' },
+  { name: 'ETHUSD', symbol: 'ETHUSD' },
+  { name: 'XRPUSD', symbol: 'XRPUSD' },
+  { name: 'EOSUSD', symbol: 'EOSUSD' },
+  { name: 'LTCUSD', symbol: 'LTCUSD' }
+])

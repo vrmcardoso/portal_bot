@@ -1,0 +1,63 @@
+<!-- app/views/backtests/show.html.erb -->
+<h1>Backtest Results</h1>
+
+<p>
+  <strong>Strategy:</strong>
+  <%= @backtest.strategy %>
+</p>
+
+<p>
+  <strong>Parameters:</strong>
+  <%= @backtest.parameters %>
+</p>
+
+<p>
+  <strong>Start Time:</strong>
+  <%= @backtest.start_time %>
+</p>
+
+<p>
+  <strong>End Time:</strong>
+  <%= @backtest.end_time %>
+</p>
+
+<p>
+  <strong>Profit/Loss:</strong>
+  <%= @backtest.profit_loss %>
+</p>
+
+<h2>Trades</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Side</th>
+      <th>Entry Price</th>
+      <th>Exit Price</th>
+      <th>Entry Date</th>
+      <th>Exit Date</th>
+      <th>Quantity</th>
+      <th>Profit/Loss</th>
+      <th>Fees</th>
+      <th>Trade Duration</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @backtest.backtest_trades.each do |trade| %>
+      <tr>
+        <td><%= trade.side %></td>
+        <td><%= trade.entry_price %></td>
+        <td><%= trade.exit_price %></td>
+        <td><%= trade.entry_date %></td>
+        <td><%= trade.exit_date %></td>
+        <td><%= trade.quantity %></td>
+        <td><%= trade.profit_loss %></td>
+        <td><%= trade.fees %></td>
+        <td><%= trade.trade_duration %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Back', backtests_path %>
