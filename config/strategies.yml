@@ -1,0 +1,27 @@
+# config/strategies.yml
+strategies:
+  trend_following_stochastic_macd:
+    name: "Trend Following Stochastic MACD Strategy"
+    trend_detector: StochasticRsiTrendDetector
+    trade_opener: MacdTradeOpener
+    trade_closer:
+      class: OneToOneTradeCloser
+      parameters:
+        percentage_difference: 1
+    entry_rules:
+      uptrend:
+        indicators:
+          - name: "macd"
+            parameters:
+              fast_period: 12
+              slow_period: 26
+              signal_period: 9
+        condition: "bullish_cross"
+      downtrend:
+        indicators:
+          - name: "macd"
+            parameters:
+              fast_period: 12
+              slow_period: 26
+              signal_period: 9
+        condition: "bearish_cross"

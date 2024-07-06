@@ -10,25 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_05_150503) do
+ActiveRecord::Schema[7.1].define(version: 0) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "trades", force: :cascade do |t|
-    t.string "side"
-    t.decimal "entry_price"
-    t.decimal "exit_price"
-    t.string "trading_pair", null: false
-    t.datetime "entry_date"
-    t.datetime "exit_date"
-    t.decimal "quantity"
-    t.decimal "profit_loss"
-    t.decimal "fees"
-    t.integer "trade_duration"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "trade_type"
-    t.boolean "backtest", default: false
-  end
 
 end
